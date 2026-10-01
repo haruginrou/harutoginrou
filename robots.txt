@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /api/admin/
+Disallow: /signin-with-chatgpt
+Disallow: /signout-with-chatgpt
+
+Sitemap: https://haruto-ginrou.rsilva-97.chatgpt.site/sitemap.xml

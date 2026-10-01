@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#08051a">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Haruto Ginrou — Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <header class="admin-topbar">
+    <a class="admin-brand" href="/"><span>HG</span><strong>CONTROL ROOM</strong></a>
+    <div class="admin-actions">
+      <a class="ghost-button" href="/" target="_blank">View site ↗</a>
+      <a class="ghost-button" href="/signout-with-chatgpt">Sign out</a>
+      <button class="save-button" id="saveButton" type="button">Save changes</button>
+    </div>
+  </header>
+
+  <main class="admin-shell">
+    <aside class="admin-sidebar">
+      <p class="sidebar-label">Website controls</p>
+      <nav>
+        <a class="active" href="#general">General</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#videos">Videos</a>
+        <a href="#news">News</a>
+        <a href="#socials">Socials</a>
+      </nav>
+      <div class="owner-card">
+        <span>Signed in as</span>
+        <strong id="ownerEmail">Owner</strong>
+        <small>Only this account can save changes.</small>
+      </div>
+    </aside>
+
+    <div class="admin-content">
+      <section class="admin-intro">
+        <p>OWNER PANEL / LIVE CONTENT</p>
+        <h1>Direct the signal.</h1>
+        <span>Changes publish to your website immediately after saving.</span>
+      </section>
+
+      <section class="editor-section" id="general">
+        <div class="editor-heading"><div><span>01</span><h2>General</h2></div><p>Homepage introduction and creator description.</p></div>
+        <div class="field-grid">
+          <label class="full"><span>Google search title</span><input id="seoTitle" maxlength="65"><small>Aim for 45–60 characters and include your name plus “VTuber”.</small></label>
+          <label class="full"><span>Google search description</span><textarea id="seoDescription" rows="3" maxlength="170"></textarea><small>Describe your streams and content naturally in about 140–160 characters.</small></label>
+          <label><span>Hero eyebrow</span><input id="heroEyebrow" maxlength="80"></label>
+          <label class="full"><span>Hero tagline</span><textarea id="heroTagline" rows="3" maxlength="180"></textarea><small>Use a new line to split the tagline.</small></label>
+          <label class="full"><span>About heading</span><textarea id="aboutHeading" rows="2" maxlength="180"></textarea><small>The second line receives outline styling.</small></label>
+          <label class="full"><span>Primary introduction</span><textarea id="aboutPrimary" rows="4" maxlength="700"></textarea></label>
+          <label class="full"><span>Secondary introduction</span><textarea id="aboutSecondary" rows="4" maxlength="700"></textarea></label>
+        </div>
+      </section>
+
+      <section class="editor-section" id="schedule">
+        <div class="editor-heading"><div><span>02</span><h2>Schedule</h2></div><button class="add-button" type="button" data-add="schedule">+ Add item</button></div>
+        <div class="repeater" id="scheduleEditor"></div>
+      </section>
+
+      <section class="editor-section" id="videos">
+        <div class="editor-heading"><div><span>03</span><h2>Videos</h2></div><button class="add-button" type="button" data-add="videos">+ Add video</button></div>
+        <div class="repeater" id="videosEditor"></div>
+      </section>
+
+      <section class="editor-section" id="news">
+        <div class="editor-heading"><div><span>04</span><h2>News</h2></div><button class="add-button" type="button" data-add="news">+ Add post</button></div>
+        <div class="repeater" id="newsEditor"></div>
+      </section>
+
+      <section class="editor-section" id="socials">
+        <div class="editor-heading"><div><span>05</span><h2>Socials</h2></div><button class="add-button" type="button" data-add="socials">+ Add link</button></div>
+        <div class="repeater" id="socialsEditor"></div>
+      </section>
+    </div>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="admin.js"></script>
+</body>
+</html>
